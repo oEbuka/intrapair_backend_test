@@ -1,4 +1,4 @@
- function firstRecurringChar(str) {
+function firstRecurringChar(str) {
     let charMap = {};
     for (let char of str) {
         if (charMap[char]) {
