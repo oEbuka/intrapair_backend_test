@@ -1,10 +1,10 @@
 Documentation for task 3
 
-#Pickup Date Generation API
+### Pickup Date Generation API
 Endpoint
-##POST /generate_pickup_dates
+### POST /generate_pickup_dates
 
-Request
+***Request***
 json
 ```
 {
@@ -15,7 +15,7 @@ json
 Parameters
 pickup_day (string) - The day of the week for pickup. Must be one of "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 recurrence (int) - The number of pickups per month. Must be one of 1, 2, or 4.
-Response
+***Response***
 json
 ```
 {
@@ -39,7 +39,7 @@ json
   ]
 }
 ```
-##Response fields
+### Response fields
 pickup_dates (array) - An array of pickup dates and their human-readable versions. Each element in the array is an object with the following fields:
 date (string) - The pickup date in ISO-8601 format
 readable_date (string) - The pickup date in a human-readable format (e.g. "24 July 2021")
@@ -50,9 +50,9 @@ curl -X POST https://your-api-endpoint.com/generate_pickup_dates -d '{"pickup_da
 ```
 This will generate the next 4 pickup dates starting from the current date.
 
-##Error Responses
+### Error Responses
 400 Bad Request - If the pickup_day or recurrence parameters are invalid.
 500 Internal Server Error - If there is an error generating the pickup dates.
-Notes
-~The API will return the next pickup dates in the future starting from the current date.
-~The API will return the pickup dates only for the current month.
+```Notes ```
+The API will return the next pickup dates in the future starting from the current date.
+The API will return the pickup dates only for the current month.
